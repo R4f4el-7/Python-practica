@@ -5,7 +5,7 @@ try:
     num = int(input('Numero: '))
 
     while(num >= 0):
-        print(f'{num}')
+        print(f'{num}', end=', ')
         num -= 1
 except ValueError:
     print('valor invalido')
