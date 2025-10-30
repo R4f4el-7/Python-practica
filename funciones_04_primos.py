@@ -2,8 +2,7 @@
 Solicita al usuario un número entero positivo y comprueba si es primo. Usa un bucle while
 para verificar si tiene divisores y muestra el resultado. Valida la entrada con try-except.'''
 
-try:
-    num = int(input('Introduce num: '))
+def esPrimo(num):
     contador = 0
     i = 1
 
@@ -20,5 +19,8 @@ try:
     else:
         print('No es primo')
 
+try:
+    num = int(input('Introduce num: '))
+    esPrimo(num)
 except ValueError:
     print("Valor no valido")
