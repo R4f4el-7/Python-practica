@@ -4,6 +4,7 @@ hasta N. Usa un bucle for para recorrer los números y otro bucle while para ver
 primos. Maneja errores si el usuario introduce un valor no válido.'''
 
 def primosN(num):
+    arr_primos = []
     contador = 0
     i = 1
     j = 1
@@ -15,14 +16,18 @@ def primosN(num):
             j += 1
         
         if(contador == 2):
-            print(f"{i} es primo")
+            arr_primos.append(i)
         
         contador = 0
         j = 1
         i += 1
+    
+    return arr_primos
 
 try:
     num = int(input("Introduce num: "))
-    primosN(num)
+    
+    for n in primosN(num):
+        print(n, end=",")
 except ValueError:
     print("Valor no valido")

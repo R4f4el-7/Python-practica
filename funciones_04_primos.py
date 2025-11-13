@@ -15,12 +15,16 @@ def esPrimo(num):
             contador += 1"""
     
     if contador == 2:
-        print('Es primo')
+        return True
     else:
-        print('No es primo')
+        return False
 
 try:
     num = int(input('Introduce num: '))
-    esPrimo(num)
+    if(esPrimo(num)):
+        print('Es primo')
+    else:
+        print('No es primo')
+    
 except ValueError:
     print("Valor no valido")
