@@ -52,3 +52,39 @@ import mymodule as mol
 print("-----mymodule-----")
 mol.greeting("Jonathan")
 mol.calculaSuma(1,2)
+
+#modulo area
+import moduloArea
+
+print("-----modulo area 1-----")
+print(f"Area de cuadrado : {moduloArea.areacuadrado(2)}")
+print(f"Area de triangulo : {moduloArea.areatriangulo(2,3)}")
+print(f"Area de circulo : {moduloArea.circulo()}")
+print(f"Area de circulo : {moduloArea.circulo(16)}")
+
+import moduloArea as a
+
+print("-----modulo area 2-----")
+print(f"Area de cuadrado : {a.areacuadrado(2)}")
+print(f"Area de triangulo : {a.areatriangulo(2,3)}")
+print(f"Area de circulo : {a.circulo()}")
+print(f"Area de circulo : {a.circulo(16)}")
+
+from moduloArea import areacuadrado, areatriangulo, circulo
+
+print("-----modulo area 3-----")
+print(f"Area de cuadrado : {areacuadrado(2)}")
+print(f"Area de triangulo : {areatriangulo(2,3)}")
+print(f"Area de circulo : {circulo()}")
+print(f"Area de circulo : {circulo(16)}")
+
+#crea una funcion calcular el precio d una entrada sabiendo que para ello saber el precio normal(10) 
+#edad del asistente y si es o no estudiante. Al ser menor o estudiante descuento(no acumulables)
+def calcularPrecio(edad, estudiante, precio_normal = 10):
+    if(edad < 18 or estudiante):
+        precio_normal = precio_normal / 2
+
+    return precio_normal
+print(f"Entrada 1: {calcularPrecio(17, False)}")
+print(f"Entrada 2: {calcularPrecio(22, True)}")
+print(f"Entrada 3: {calcularPrecio(67, False)}")
