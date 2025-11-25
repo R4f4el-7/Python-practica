@@ -10,3 +10,6 @@ def saludoValor():
     return "Hola"
 
 print(saludoValor(), " Buenas")
+
+min = min('hola mundo')
+print(min)
