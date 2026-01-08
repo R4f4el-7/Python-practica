@@ -3,9 +3,9 @@ def saludo():
     print('hola')
 def despedida():
     print('adios')
-lista = ['hola','despedida']
+tupla = ('hola','despedida')
 comandoInput = input('Di el comando: ')
-if(comandoInput == lista[0]):
+if(comandoInput == tupla[0]):
     saludo()
-if(comandoInput == lista[1]):
+if(comandoInput == tupla[1]):
     despedida()
