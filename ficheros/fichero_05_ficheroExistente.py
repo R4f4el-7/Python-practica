@@ -8,14 +8,11 @@ Solicita al usuario las líneas a añadir.
 Escribe cada línea en el fichero.
 Cierra el fichero.'''
 try:
-    cantidadInput = input("Cantidad de lineas: ")
-    for num in range(int(cantidadInput)):
-        lineaInput = input(f'linea {num}: ')
-        with open("data.txt", "a") as f:
-            f.write(lineaInput+"\n")
-
-    #open and read the file after the appending:
-    with open("data.txt") as f:
-        print(f.read())
+    with open("data.txt", "a") as fichero:
+        while True:
+            linea = input("Añade una nueva línea (o 'fin' para terminar): ")
+            if linea.lower() == "fin":
+                break
+            fichero.write(linea + "\n")
 except:
     print("Fichero no existe")
