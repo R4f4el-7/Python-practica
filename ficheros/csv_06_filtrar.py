@@ -12,14 +12,25 @@ Carlos Sánchez,4700,Ventas
 Sofía Torres,3200,Desarrollo
 Pedro Díaz,4500,Marketing'''
 import csv
-diccEmpleados_3000 ={}
-with open("empleados.csv","r") as f:
+
+empleados_3000 = []
+
+with open("empleados.csv", "r") as f:
     lector = csv.DictReader(f)
     for linea in lector:
         salario = int(linea["Salario"])
         if salario > 3000:
-            diccEmpleados_3000[linea["Nombre"]] = {
-                "Salario": int(linea["Salario"]),
+            empleados_3000.append({
+                "Nombre": linea["Nombre"],
+                "Salario": salario,
                 "Departamento": linea["Departamento"]
-            }
-print(diccEmpleados_3000)
+            })
+
+for emp in empleados_3000:
+    print(emp)
+
+with open("Empleados3000.csv", "w", newline="", encoding="utf-8") as f:
+    fieldnames = ["Nombre", "Salario", "Departamento"]
+    escritor = csv.DictWriter(f, fieldnames=fieldnames)
+    escritor.writeheader()           # Opcional, pero recomendable
+    escritor.writerows(empleados_3000) 

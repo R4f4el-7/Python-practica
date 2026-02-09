@@ -5,6 +5,7 @@ import csv
 with open("datos.csv","r") as f:
     for linea in f:
         print(linea.strip())
+        
 with open("datos.csv","r") as f:
     lector = csv.DictReader(f)
     for linea in lector:
