@@ -20,11 +20,7 @@ with open("empleados.csv", "r") as f:
     for linea in lector:
         salario = int(linea["Salario"])
         if salario > 3000:
-            empleados_3000.append({
-                "Nombre": linea["Nombre"],
-                "Salario": salario,
-                "Departamento": linea["Departamento"]
-            })
+            empleados_3000.append(linea)
 
 for emp in empleados_3000:
     print(emp)
