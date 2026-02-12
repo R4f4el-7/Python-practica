@@ -6,13 +6,15 @@ estudiantes.csv
 Nombre,Edad,Grado
 Juan,20,A
 Ana,22,B
-Luis,21,A'''
+Luis,21,A''' 
 import csv
 estudiantes = [
-    {"Nombre":"nombre1","Edad":"1","Grado":"a"},
-    {"Nombre":"nombre2","Edad":"2","Grado":"b"},
-    {"Nombre":"nombre3","Edad":"3","Grado":"c"}
+    {"Nombre": "Juan", "Edad": 20, "Grado": "A"},
+    {"Nombre": "Ana", "Edad": 22, "Grado": "B"},
+    {"Nombre": "Luis", "Edad": 21, "Grado": "A"}
 ]
-with open("estudiantes.csv","a",newline="") as f:
+with open("estudiantes.csv","w",newline="") as f:  
     escritor = csv.DictWriter(f,fieldnames=["Nombre","Edad","Grado"])
-    escritor.writerows(estudiantes)
+    
+    escritor.writeheader()
+    escritor.writerows(estudiantes)  

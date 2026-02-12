@@ -11,5 +11,5 @@ Cierra ambos ficheros.'''
 with open("data.txt","r") as f:
     lineas = f.read()
 
-with open("copia.txt","a") as f:
+with open("copia.txt","w") as f:
     f.write(lineas)
